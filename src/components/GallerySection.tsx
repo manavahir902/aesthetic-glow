@@ -10,10 +10,10 @@ import romantic3 from '@/assets/romantic-3.jpg';
 import romantic4 from '@/assets/image1set2.jpg';
 import romantic5 from '@/assets/romantic-5.jpg';
 import romantic6 from '@/assets/romantic-6.jpg';
-import gallery1 from '@/assets/image-1.jpg';
-import gallery2 from '@/assets/image-2.jpg';
-import gallery3 from '@/assets/image-3.jpg';
-import gallery4 from '@/assets/image-4.jpg';
+import gallery1 from '@/assets/image1.jpg';
+import gallery2 from '@/assets/image2.jpg';
+import gallery3 from '@/assets/image3.jpg';
+import gallery4 from '@/assets/image4.jpg';
 
 const galleryImages1 = [romantic1, romantic2, romantic3];
 const galleryImages2 = [romantic4, romantic5, romantic6];
