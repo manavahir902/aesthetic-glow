@@ -20,27 +20,26 @@ const StorySection = () => {
         <div className="glass-card p-8 md:p-12">
           <div className="story-text text-foreground space-y-6 text-body-lg">
             <p className="opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-              From the very first moment our paths crossed, I knew there was something 
-              extraordinary about you. Your smile lit up the darkest corners of my world, 
-              and your laughter became my favorite melody.
+              From the very first day of conversations I knew we were gonna have a very long journey together
+              our bond was incomparable and unique in every manner and that too in a very short period of time.
+              and see today here we areee
             </p>
             
             <p className="opacity-0 animate-fade-in-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-              Every day with you feels like unwrapping a beautiful gift — full of surprises, 
+              Every day with you feels like unwrapping a beautiful gift full of surprises, 
               warmth, and endless wonder. You've taught me what it means to truly love and 
               be loved in return.
             </p>
             
             <p className="opacity-0 animate-fade-in-up" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-              This page is a small token of my gratitude for every laugh we've shared, 
-              every tear we've overcome, and every dream we've dared to dream together.
+              This page is a small token love. I Love you 🐻‍❄️
             </p>
           </div>
 
           {/* Signature */}
           <div className="mt-10 text-right">
             <p className="font-heading text-3xl text-gold">
-              With all my love
+              Your Lover 💝.
             </p>
           </div>
         </div>
