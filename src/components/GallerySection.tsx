@@ -4,12 +4,12 @@ import Lightbox from './Lightbox';
 import { Camera } from 'lucide-react';
 
 // Import generated images
-import romantic1 from '@/assets/romantic-1.jpg';
-import romantic2 from '@/assets/romantic-2.jpg';
-import romantic3 from '@/assets/romantic-3.jpg';
+import romantic1 from '@/assets/image1set3.jpg';
+import romantic2 from '@/assets/image2set3.jpg';
+import romantic3 from '@/assets/image3set3.jpg';
 import romantic4 from '@/assets/image1set2.jpg';
-import romantic5 from '@/assets/romantic-5.jpg';
-import romantic6 from '@/assets/romantic-6.jpg';
+import romantic5 from '@/assets/image2set2.jpg';
+import romantic6 from '@/assets/image3set2.jpg';
 import gallery1 from '@/assets/image1.jpg';
 import gallery2 from '@/assets/image2.jpg';
 import gallery3 from '@/assets/image3.jpg';
