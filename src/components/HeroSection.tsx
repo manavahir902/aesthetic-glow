@@ -13,7 +13,7 @@ const HeroSection = () => {
         <h1 
           className="font-heading text-hero heading-calligraphy animate-fade-in-up"
         >
-          Happy Birthday Darlingg
+          Happy Birthday Darlinggg
         </h1>
         
         <p className="mt-8 font-body text-subhero text-lavender font-light tracking-widest animate-fade-in-up delay-200 opacity-0" style={{ animationFillMode: 'forwards' }}>
