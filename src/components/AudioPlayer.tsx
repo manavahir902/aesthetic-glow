@@ -12,24 +12,32 @@ const AudioPlayer = ({ audioSrc }: AudioPlayerProps) => {
 
   useEffect(() => {
     const handleInteraction = () => {
-      if (!hasInteracted && audioRef.current) {
+      // If already playing or interacted, do nothing
+      if (hasInteracted || (audioRef.current && !audioRef.current.paused)) return;
+
+      if (audioRef.current) {
         setHasInteracted(true);
-        audioRef.current.play().then(() => {
-          setIsPlaying(true);
-        }).catch(() => {
-          // Autoplay blocked, user can manually toggle
-        });
+        audioRef.current.play()
+          .then(() => setIsPlaying(true))
+          .catch((error) => {
+            console.warn("Autoplay still blocked by browser policy:", error);
+          });
       }
     };
 
-    window.addEventListener('scroll', handleInteraction, { once: true });
-    window.addEventListener('touchstart', handleInteraction, { once: true });
-    window.addEventListener('click', handleInteraction, { once: true });
+    // Listen for the first interaction to "unlock" audio
+    const events = ['scroll', 'touchstart', 'click', 'keydown'];
+    events.forEach(event => window.addEventListener(event, handleInteraction, { once: true }));
+
+    // Fallback: Attempt to play immediately on mount (works if site is allowlisted)
+    if (audioRef.current) {
+      audioRef.current.play()
+        .then(() => setIsPlaying(true))
+        .catch(() => { /* Silent fail is expected here */ });
+    }
 
     return () => {
-      window.removeEventListener('scroll', handleInteraction);
-      window.removeEventListener('touchstart', handleInteraction);
-      window.removeEventListener('click', handleInteraction);
+      events.forEach(event => window.removeEventListener(event, handleInteraction));
     };
   }, [hasInteracted]);
 
@@ -39,16 +47,21 @@ const AudioPlayer = ({ audioSrc }: AudioPlayerProps) => {
         audioRef.current.pause();
         setIsPlaying(false);
       } else {
-        audioRef.current.play().then(() => {
-          setIsPlaying(true);
-        });
+        audioRef.current.play().then(() => setIsPlaying(true));
       }
     }
   };
 
   return (
     <>
-      <audio ref={audioRef} src={audioSrc} loop />
+      {/* Added autoPlay and playsInline for better mobile/tablet support */}
+      <audio 
+        ref={audioRef} 
+        src={audioSrc} 
+        loop 
+        autoPlay 
+        playsInline 
+      />
       <button
         onClick={togglePlay}
         className="fixed bottom-6 right-6 z-40 p-4 rounded-full glass-card text-lavender hover:text-gold transition-all hover:scale-110"
@@ -58,11 +71,7 @@ const AudioPlayer = ({ audioSrc }: AudioPlayerProps) => {
             : '0 0 10px hsla(270, 60%, 70%, 0.2)',
         }}
       >
-        {isPlaying ? (
-          <Volume2 className="w-5 h-5" />
-        ) : (
-          <VolumeX className="w-5 h-5" />
-        )}
+        {isPlaying ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5" />}
       </button>
     </>
   );

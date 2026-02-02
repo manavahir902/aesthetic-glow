@@ -4,17 +4,16 @@ import StorySection from '@/components/StorySection';
 import GallerySection from '@/components/GallerySection';
 import QuestionSection from '@/components/QuestionSection';
 import AudioPlayer from '@/components/AudioPlayer';
+import herGraceAudio from '@/assets/hergrace.mp3';
 
 const Index = () => {
   return (
     <div className="relative min-h-screen bg-midnight overflow-x-hidden">
-      {/* Fireworks background */}
       <FireworksCanvas />
       
-      {/* Audio player - using a royalty-free romantic track placeholder */}
-      <AudioPlayer audioSrc="https://www.soundjay.com/misc/sounds/heartbeat-01.mp3" />
+      {/* 2. Pass the imported variable, NOT a string path */}
+      <AudioPlayer audioSrc={herGraceAudio} />
       
-      {/* Main content */}
       <main className="relative z-10">
         <HeroSection />
         <StorySection />
@@ -22,10 +21,9 @@ const Index = () => {
         <QuestionSection />
       </main>
 
-      {/* Footer */}
       <footer className="relative z-10 py-8 text-center">
         <p className="font-heading text-2xl text-gold/60">
-          Made with love ♥
+          Yours Truly, Uday ♥
         </p>
       </footer>
     </div>
