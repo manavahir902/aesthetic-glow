@@ -12,7 +12,7 @@ const Index = () => {
       <FireworksCanvas />
       
       {/* Audio player - using a royalty-free romantic track placeholder */}
-      <AudioPlayer audioSrc="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" />
+      <AudioPlayer audioSrc="https://www.soundjay.com/misc/sounds/heartbeat-01.mp3" />
       
       {/* Main content */}
       <main className="relative z-10">
